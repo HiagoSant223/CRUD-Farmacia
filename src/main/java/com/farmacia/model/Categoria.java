@@ -18,9 +18,12 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank(message = "O nome é obrigatorio")
+	@NotBlank(message = "O atributo Nome é obrigatorio")
+	@Size(min = 5, max = 15, message = "O atributo Nome deve ter entre 5 e 15 caracteres")
 	private String nome;
 	
+	@NotBlank(message = "O atributo Descrição é obrigatorio")
+	@Size(min = 10, max = 150, message = "O atributo Descrição deve ter entre 10 e 150 caracteres")
 	private String descricao;
 
 	public Long getId() {
